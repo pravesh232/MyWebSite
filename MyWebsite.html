@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Your Ultimate Gaming Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background for gaming theme */
+            color: #e2e8f0; /* Lighter text for dark background */
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2); /* Cyan glow effect */
+        }
+        .section-title {
+            background: linear-gradient(90deg, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background-color: #ec4899; /* Pink accent */
+            border-color: #ec4899;
+        }
+        .btn-primary:hover {
+            background-color: #db2777;
+            border-color: #db2777;
+        }
+        .btn-secondary {
+            background-color: #4f46e5; /* Indigo accent */
+            border-color: #4f46e5;
+        }
+        .btn-secondary:hover {
+            background-color: #4338ca;
+            border-color: #4338ca;
+        }
+        .navbar-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(31, 41, 55, 0.8); /* Semi-transparent dark bg */
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <header class="navbar-sticky shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl font-bold text-white">
+                        <i class="fas fa-gamepad mr-2 text-pink-500"></i>
+                        Game<span class="text-pink-500">Hub</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-pink-400 transition duration-150 ease-in-out">Home</a>
+                    <a href="#games" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-pink-400 transition duration-150 ease-in-out">Games</a>
+                    <a href="#consoles" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-pink-400 transition duration-150 ease-in-out">Consoles</a>
+                    <a href="#accessories" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-pink-400 transition duration-150 ease-in-out">Accessories</a>
+                    <a href="#deals" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-pink-400 transition duration-150 ease-in-out">Deals</a>
+                    <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-pink-400 transition duration-150 ease-in-out">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 bg-opacity-90">
+            <a href="#home" class="block px-4 py-3 rounded-md text-base font-medium text-gray-200 hover:bg-gray-700 hover:text-pink-400">Home</a>
+            <a href="#games" class="block px-4 py-3 rounded-md text-base font-medium text-gray-200 hover:bg-gray-700 hover:text-pink-400">Games</a>
+            <a href="#consoles" class="block px-4 py-3 rounded-md text-base font-medium text-gray-200 hover:bg-gray-700 hover:text-pink-400">Consoles</a>
+            <a href="#accessories" class="block px-4 py-3 rounded-md text-base font-medium text-gray-200 hover:bg-gray-700 hover:text-pink-400">Accessories</a>
+            <a href="#deals" class="block px-4 py-3 rounded-md text-base font-medium text-gray-200 hover:bg-gray-700 hover:text-pink-400">Deals</a>
+            <a href="#contact" class="block px-4 py-3 rounded-md text-base font-medium text-gray-200 hover:bg-gray-700 hover:text-pink-400">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <section id="home" class="bg-gray-800 rounded-lg shadow-2xl p-8 md:p-12 mb-16 text-center relative overflow-hidden min-h-[60vh] flex flex-col justify-center items-center">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://placehold.co/1200x600/1A202C/4A5568?text=Epic+Gaming+Montage');"></div>
+            <div class="relative z-10">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
+                    <span class="section-title">Level Up</span> Your <span class="section-title">Gaming</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-400 mb-10">Discover the latest games, next-gen consoles, and must-have accessories.</p>
+                <a href="#games" class="btn-primary text-white font-bold py-4 px-10 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">Explore Games</a>
+            </div>
+        </section>
+
+        <section id="games" class="mb-16">
+            <h2 class="text-4xl font-bold mb-10 text-center section-title">Featured Games</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 card-hover-effect flex flex-col">
+                    <img src="https://placehold.co/400x300/2D3748/E2E8F0?text=CyberPunk+Odyssey" alt="CyberPunk Odyssey" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-2">CyberPunk Odyssey</h3>
+                    <p class="text-gray-400 mb-1 text-sm">Action RPG</p>
+                    <p class="text-gray-500 text-xs mb-3">Step into a neon-drenched future.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-xl font-bold text-green-400">$59.99</span>
+                        <a href="#" class="btn-secondary text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-150">View Details</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 card-hover-effect flex flex-col">
+                    <img src="https://placehold.co/400x300/2D3748/E2E8F0?text=Galaxy+Guardians" alt="Galaxy Guardians" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-2">Galaxy Guardians</h3>
+                    <p class="text-gray-400 mb-1 text-sm">Space Shooter</p>
+                    <p class="text-gray-500 text-xs mb-3">Defend the cosmos from alien threats.</p>
+                     <div class="mt-auto flex justify-between items-center">
+                        <span class="text-xl font-bold text-green-400">$49.99</span>
+                        <a href="#" class="btn-secondary text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-150">View Details</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 card-hover-effect flex flex-col">
+                    <img src="https://placehold.co/400x300/2D3748/E2E8F0?text=Mystic+Realms" alt="Mystic Realms" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-2">Mystic Realms</h3>
+                    <p class="text-gray-400 mb-1 text-sm">Fantasy MMO</p>
+                    <p class="text-gray-500 text-xs mb-3">Embark on an epic fantasy adventure.</p>
+                     <div class="mt-auto flex justify-between items-center">
+                        <span class="text-xl font-bold text-green-400">$39.99</span>
+                        <a href="#" class="btn-secondary text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-150">View Details</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 card-hover-effect flex flex-col">
+                    <img src="https://placehold.co/400x300/2D3748/E2E8F0?text=Speed+Demons+X" alt="Speed Demons X" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-2">Speed Demons X</h3>
+                    <p class="text-gray-400 mb-1 text-sm">Racing Sim</p>
+                    <p class="text-gray-500 text-xs mb-3">Experience adrenaline-pumping races.</p>
+                     <div class="mt-auto flex justify-between items-center">
+                        <span class="text-xl font-bold text-green-400">$54.99</span>
+                        <a href="#" class="btn-secondary text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-150">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="consoles" class="mb-16">
+            <h2 class="text-4xl font-bold mb-10 text-center section-title">Latest Consoles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 card-hover-effect">
+                    <img src="https://placehold.co/600x400/2D3748/E2E8F0?text=NextGen+Console+Alpha" alt="NextGen Console Alpha" class="rounded-md mb-4 w-full h-64 object-cover">
+                    <h3 class="text-3xl font-semibold text-indigo-400 mb-3">NextGen Console Alpha</h3>
+                    <p class="text-gray-400 mb-4">Experience unparalleled power and immersion with the latest gaming hardware.</p>
+                    <a href="#" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-pink-700 transition duration-150">Learn More</a>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 card-hover-effect">
+                    <img src="https://placehold.co/600x400/2D3748/E2E8F0?text=Portable+Play+Max" alt="Portable Play Max" class="rounded-md mb-4 w-full h-64 object-cover">
+                    <h3 class="text-3xl font-semibold text-indigo-400 mb-3">Portable Play Max</h3>
+                    <p class="text-gray-400 mb-4">Take your gaming on the go with this powerful and versatile handheld console.</p>
+                    <a href="#" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-pink-700 transition duration-150">Learn More</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="bg-gray-800 rounded-lg shadow-xl p-8 md:p-12 mb-16">
+            <h2 class="text-4xl font-bold text-center mb-8 section-title">About GameHub</h2>
+            <div class="md:flex md:items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                    <img src="https://placehold.co/600x400/2D3748/E2E8F0?text=GameHub+Team" alt="About GameHub" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-gray-400 mb-4 text-lg">
+                        At GameHub, we live and breathe gaming. Founded by passionate gamers, for gamers, our mission is to provide the ultimate destination for all your gaming needs. From the latest AAA titles and indie gems to cutting-edge consoles and high-performance accessories, we've got you covered.
+                    </p>
+                    <p class="text-gray-400 text-lg">
+                        We believe in fair prices, excellent customer service, and fostering a vibrant gaming community. Join us and level up your experience!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gray-800 rounded-lg shadow-xl p-8 md:p-12">
+            <h2 class="text-4xl font-bold text-center mb-10 section-title">Get In Touch</h2>
+            <form class="max-w-xl mx-auto">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-400">Full Name</label>
+                    <input type="text" id="name" class="shadow-sm bg-gray-700 border border-gray-600 text-gray-200 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-3" placeholder="Your Name" required>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-400">Email Address</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-700 border border-gray-600 text-gray-200 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-3" placeholder="you@example.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-400">Message</label>
+                    <textarea id="message" rows="5" class="block p-3 w-full text-sm text-gray-200 bg-gray-700 rounded-lg border border-gray-600 focus:ring-pink-500 focus:border-pink-500" placeholder="Your message..."></textarea>
+                </div>
+                <button type="submit" class="w-full text-white btn-primary focus:ring-4 focus:outline-none focus:ring-pink-700 font-medium rounded-lg text-lg px-5 py-3 text-center">Send Message</button>
+            </form>
+            <div id="form-feedback" class="mt-4 text-center"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-6">
+                <a href="#" class="text-gray-400 hover:text-pink-400 mx-3 text-2xl transition duration-150"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-400 mx-3 text-2xl transition duration-150"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-400 mx-3 text-2xl transition duration-150"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-400 mx-3 text-2xl transition duration-150"><i class="fab fa-twitch"></i></a>
+            </div>
+            <p class="mb-2">&copy; <span id="currentYear"></span> GameHub. All rights reserved.</p>
+            <p class="text-sm">Powered by Passion & Pixels</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Contact Form submission handler
+        const contactForm = document.querySelector('form');
+        const formFeedback = document.getElementById('form-feedback');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Basic validation (can be expanded)
+                if (!name || !email || !message) {
+                    formFeedback.textContent = 'Please fill out all fields.';
+                    formFeedback.className = 'mt-4 text-center text-red-500';
+                    return;
+                }
+                if (!email.includes('@')) {
+                     formFeedback.textContent = 'Please enter a valid email.';
+                    formFeedback.className = 'mt-4 text-center text-red-500';
+                    return;
+                }
+
+                console.log('Form Submitted:', { name, email, message });
+
+                formFeedback.textContent = 'Thanks for your message! We\'ll get back to you soon. (Demo)';
+                formFeedback.className = 'mt-4 text-center text-green-400';
+                
+                contactForm.reset(); 
+
+                setTimeout(() => {
+                    formFeedback.textContent = '';
+                    formFeedback.className = 'mt-4 text-center';
+                }, 5000);
+            });
+        }
+    </script>
+
+</body>
+</html>
